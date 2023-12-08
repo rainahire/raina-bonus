@@ -1,0 +1,162 @@
+---
+title: "Assignment 1.6"
+subtitle: "CPSC 292 Section #1 (Waldrop)"
+author: "Raina Hirekatur"
+date: "09/08/2023"
+output: html_notebook
+---
+
+### Collaboration team: 
+
+Record who you've worked on the assignment with here: Jesille, Victoria
+
+
+## Assignment 1.6 -- Data Types in R
+
+```{r setup, include=FALSE}
+# Do not alter this section of code!
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Write a R code in each chunk (gray space) that provides answers to the following questions. If any questions need direct answers, give them in regular text space (white space).
+
+### Question 1
+
+*For the following inputs, list all of the data type(s) that would be appropriate to store data in R. Code the example for each.*
+
+  a. *The word fart*
+  
+  Your answer here: Character
+```{r}
+my_word <- c("fart")
+print(my_word)
+class(my_word)
+```
+  b. *The condition TRUE*
+  
+  Your answer here: Logical
+```{r}
+l <- c(TRUE)
+```
+  c. *The vector < FALSE, TRUE, FALSE, FALSE, TRUE >*
+  
+  Your answer here: Logical
+```{r}
+l1 <- c(FALSE,TRUE,FALSE,FALSE,TRUE)
+```
+  d. *The vector < 1, 0, 1, 0 >*
+  
+  Your answer here: Integer & Numeric
+```{r}
+i <- c(1L, 0L, 1L, 0L)
+```
+  e. *The vector < 2.66, 2.66 >*
+  
+  Your answer here: Numeric
+```{r}
+n <- c(2.66, 2.66)
+```
+  f. *The vector < 2i, 3+3i >*
+  
+  Your answer here: Complex
+```{r}
+c <- c(2i, 3+3i)
+```
+  g. *The number 8*
+  
+  Your answer here: Integer
+```{r}
+i2 <- c(8)
+```
+  h. *The number 3.6*
+
+  Your answer here: Numeric
+```{r}
+n2 <- c(3.6)
+```
+
+### Question 2
+
+*For the following functions, what types of data do they accept as inputs and what data types do they return as outputs? Code a working example of each.*
+
+ a. `median()`
+  
+```{r}
+median(c(5, 8, 2, 10, 6))
+#Inputs: numeric, integer, logical, factors, data frames, lists
+#Outputs: numeric, integer, logical, factors, data frames, lists
+```
+
+ b. `sd()`
+ 
+```{r}
+sd(c(5, 8, 2, 10, 6))
+#Inputs: numeric, integer, logical, factors, data frames, lists
+#Outputs: numeric
+```
+ 
+ c. `any()`
+   
+```{r}
+any(T,F,T,T)
+#Inputs: logical
+#Outputs:logical
+```
+ 
+ d. `cut()`
+ 
+```{r}
+age <- c(12,23,34,47,58,59,62,79)
+age_break <- c(0,10,20,30,40,50,60,70, max(age))
+age_label <- c("<20", "10-19","20-29", "30-39", "40-49", "50-59", "60-69", "70+")
+age_group <- cut(age, breaks = age_break, labels = age_label, right = TRUE)
+#Inputs: numeric, breaks, labels, right
+#Outputs: factor, numeric
+```
+ 
+ e. `order()`
+  
+```{r}
+order(c(5, 8, 2, 10, 6))
+#Inputs: numeric, character
+#Outputs:integer
+```
+
+### Question 3
+
+*Run the function `is.character()` on the coded example for each answer in question 1 (give each example
+its own line). What does the output mean?*
+
+```{r}
+is.character(my_word)
+is.character(TRUE)
+is.character(FALSE)
+is.character(1L)
+is.character(2.66)
+is.character(3+3i)
+is.character(8)
+is.character(3.6)
+```
+
+Your answer here. 
+
+### Question 4
+
+*Use the function `runif()` to produce 1000 random numbers between 0 and 1.*
+
+```{r}
+runif(1000, min = 0, max =1)
+```
+
+*How could you change the range from 10 to 1000 (instead of 0 to 1)? Write an explanation here describing the change and then put the adjusted code.*
+
+Your answer here.
+
+```{r}
+runif(1000, min = 10, max =100)
+#you need to adjust the min and max values according to what values you want the output of
+```
+
+
+
+Turn in this RMD file.
